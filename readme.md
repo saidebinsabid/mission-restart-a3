@@ -1,202 +1,101 @@
-# 🦸‍♂️ Assignment 03 — Hero IO
+# 🚀 Hero IO — App Discovery Platform
 
+A modern, responsive app discovery platform where you can explore, search, and install trending mobile applications.
 
----
+## 🔗 Links
 
-
-# 🐣 Basic Requirements
-
-- Make the Application Responsive for All the Devices
-- Do minimum 5 commits to your github Repository
-- Give a meaning full name to your application
-- Make Sure on Production Application is error Free
-- Add a Readme.md with App Name , Description & Technologies
+- **Live Link:** YOUR_DEPLOYED_URL_HERE
+- **GitHub Repository:** https://github.com/saidebinsabid/mission-restart-a3
 
 ---
 
-# 🔧 Main Requirements
+## 📖 Description
 
-## 1. 🧱 Layout & Data Design
-
-#### Header
-
-- The header must include:
-  - A logo.on clicking it user will be navigated to home page.
-  - A navigation bar with links [ `home` , `apps` , `installation` ] and active route indication.
-  - A `Contribution` button as Figma linking to the your GitHub profile.
-
-#### Footer
-
-- Design a custom footer using your own creativity and style.
-
-#### Data
-
-- Create an JSON Array of minimum 12-20 objects for app data using the following structure:
-  ```js
-  {
-    image: string;
-    title: string;
-    companyName: string;
-    id: number;
-    description: string;
-    size: number;
-    reviews: number;
-    ratingAvg: number;
-    downloads: number;
-    ratings: [
-      { name: "1 star"; count: number },
-      { name: "2 star"; count: number },
-      { name: "3 star"; count: number },
-      { name: "4 star"; count: number },
-      { name: "5 star"; count: number }
-    ];
-  }
-  ```
+**Hero IO** is a feature-rich app store showcase built with React. It allows users to browse trending apps, search and filter through a curated collection, view detailed app information with ratings charts, and manage their installed apps — all powered by localStorage for persistence.
 
 ---
 
-## 2. 🏠 Home Page
+## ✨ Features
 
-#### Banner
-
-- Must contain a center-aligned heading, text, and two buttons.
-- “App Store” button will redirect to the App Store.
-- “Play Store” button will redirect to the Play Store.
-
-#### States Section
-
-- Must contain three state cards as shown in Figma.
-
-#### Top Apps Section
-
-- Display eight apps in a four-column layout.
-- Each app card should display:
-  - App title
-  - Image
-  - Download count
-  - Average rating
-- Clicking on a card should navigate the user to the App Details page.
-- Include a “Show All” button that navigates to the All Apps page.
+- 🏠 **Home Page** — Hero banner, stats section (29.6M downloads, 906K reviews, 132+ apps), trending apps grid
+- 📱 **All Apps Page** — Live search, sort by downloads (High→Low / Low→High), responsive 4-column grid
+- 📊 **App Details Page** — App info, horizontal ratings bar chart (Recharts), install button with toast notification
+- 💾 **Installation Page** — View & manage installed apps, uninstall with toast, sort by downloads
+- 🔍 **Live Search** — Case-insensitive real-time filtering
+- ⚡ **Loading Animations** — Spinner during page navigation and search
+- ❌ **Error Pages** — Custom 404 page and App Not Found page
+- 📲 **LocalStorage** — Installed apps persist across browser sessions
+- 📱 **Fully Responsive** — Works on mobile, tablet, and desktop
 
 ---
 
-## 3.📱 All Apps Page
+## 🛠️ Technologies
 
-#### Title Section
-
-- Include a title and subtitle following the Figma design.
-
-#### Search and States
-
-- Display the total number of apps on the left and a search bar on the right.
-- `Implement live search functionality`
-  - filters apps by title as the user types.
-  - Search will be case-insensitive
-  - If no app matches, display a “No App Found” message.
-
-#### App Section
-
-- Display all apps from the JSON data.
-- Each app card should include:
-  - App title
-  - Image
-  - Download count
-  - Average rating
-- Clicking on an app card should navigate to the App Details page.
+| Technology | Version | Purpose |
+|---|---|---|
+| **React** | ^19.1.0 | UI Framework |
+| **Vite** | ^6.3.1 | Build Tool |
+| **React Router DOM** | ^7.4.1 | Client-side Routing |
+| **Recharts** | ^2.15.0 | Ratings Bar Chart |
+| **React Hot Toast** | ^2.5.2 | Toast Notifications |
+| **Vanilla CSS** | — | Styling & Design System |
 
 ---
 
-## 4.📊 App Details Page
+## 🚀 Getting Started
 
-#### App Information
+```bash
+# Clone the repository
+git clone https://github.com/saidebinsabid/mission-restart-a3.git
 
-- Show app image on the left.
-- Display app details such as title, rating, downloads, reviews.
-- Include an `Install button`:
-  - When clicked, it becomes disabled and the text changes to `Installed`.
-  - Show a Success Toast after App installed
+# Navigate to the project
+cd mission-restart-a3
 
-#### App Review Chart
+# Install dependencies
+npm install
 
-- Implement a responsive chart using the **Recharts** library.
-- Visualize the app’s review data as shown in the Figma design.
+# Start the development server
+npm run dev
+```
 
-#### App Description
-
-- Show the app details in description section as per Figma layout.
-
----
-
-## 5. Error Page & Others
-
-- Create a custom error page for invalid routes.
-
-- Show a loading animation during: `Challenge Part`  
-
-  - Page navigation. 
-  - Search operation.
-
-- Show a Relevant Not Found message app not found in app details section.
-
-- Ensure that reloading any route after deployment does not cause an error.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-# Challenge Requirement
+## 📁 Project Structure
 
-### LocalStorage Features
-
-#### App Installation
-
-- When the “Install” button is clicked:
-  - Save the app to localStorage.
-  - If the app is already installed, show a disabled button with the text `Installed`.
-
-#### My Installation Page
-
-- Create a page named “My Installation” following the Figma design.
-- Display all installed apps as cards.
-- Include an Uninstall button:
-  - Clicking it
-    - removes the app from both the UI and localStorage.
-    - Show an Toast with some relevant message
-
----
-
-### Sort by Downloads
-
-- Implement a dropdown for sorting apps by download count.
-- The dropdown must include:
-  - **High-Low:** Sort apps in descending order by downloads.
-  - **Low-High:** Sort apps in ascending order by downloads.
+```
+src/
+  assets/         — Images and icons
+  components/
+    Navbar.jsx    — Navigation with active route indication
+    Footer.jsx    — Footer with social links
+    AppCard.jsx   — Reusable app card (grid)
+    LoadingSpinner.jsx
+  data/
+    apps.js       — 15 app data objects
+  pages/
+    Home.jsx      — Home page with banner, stats, trending apps
+    Apps.jsx      — All apps with search & sort
+    AppDetails.jsx — App details with Recharts chart
+    Installation.jsx — Installed apps management
+    NotFound.jsx  — 404 error page
+  App.jsx         — Router setup
+  index.css       — Global design system
+  main.jsx        — Entry point
+```
 
 ---
 
-### Loading Animation
+## 🎨 Design
 
-- Show a loading animation during: 
-  - Page navigation. 
-  - Search operation
-
----
-
-## 🚀 Deployment
-
-- Deploy the project to Cloudflare / Netlify / Vercel.
-- Reloading from any route must work correctly without showing a 404 error.
+The design is based on the Hero IO Figma design system featuring:
+- Clean light background with purple accent color
+- Inter font for modern typography
+- Responsive grid layouts (4-col → 3-col → 2-col)
+- Smooth hover animations and transitions
+- Dark navy footer with social links
 
 ---
 
-## 🔗 Submission Guideline
-
-- **Live Link :** YOUR_DEPLOYED_URL_HERE
-- **GitHub Repository:** YOUR_REPO_URL_HERE
-
-
-### 📅 Deadline For 60 marks: 26 March , 2026 (11:59 pm ⏱️)
-
-### 📅 Deadline For 50 marks : 27 March , 2026 (11:59 pm⏱️)
-
-### 📅 Deadline For 30 marks: Since this is the final assignment, there will be no 30-mark deadline. You must submit it within the 50-mark deadline to qualify for the reward.
-
-
+*Built with ❤️ by Sabid — Hero IO © 2025*
