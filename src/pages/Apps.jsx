@@ -75,11 +75,13 @@ export default function Apps() {
                 </svg>
                 <input
                   id="search-input"
-                  type="text"
+                  type="search"
                   className="search-input"
-                  placeholder="search Apps"
+                  placeholder="Search apps..."
                   value={query}
                   onChange={handleSearch}
+                  aria-label="Search apps by name"
+                  autoComplete="off"
                 />
               </div>
             </div>
