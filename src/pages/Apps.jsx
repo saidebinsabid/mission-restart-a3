@@ -38,8 +38,8 @@ export default function Apps() {
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
+      {/* Page Hero - fade in */}
+      <section className="page-hero page-fade-in">
         <div className="container">
           <h1 className="page-hero-title">Our All Applications</h1>
           <p className="page-hero-subtitle">
