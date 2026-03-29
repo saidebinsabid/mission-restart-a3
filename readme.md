@@ -4,7 +4,7 @@ A modern, responsive app discovery platform where you can explore, search, and i
 
 ## 🔗 Links
 
-- **Live Link:** YOUR_DEPLOYED_URL_HERE
+- **Live Link:** https://transcendent-profiterole-33c7b1.netlify.app/
 - **GitHub Repository:** https://github.com/saidebinsabid/mission-restart-a3
 
 ---
